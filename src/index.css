@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+.navbar{
+  background: rgb(31, 5, 61);
+  padding: 1rem;
+  margin-bottom: 3rem;
+ }
+ 
+ .navbar-container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .logo{
+   width: 100px;
+   cursor: pointer;
+ }
+ 
+ .container{
+   max-width: 90%;
+   margin: 0 auto;
+ }
+
+ #search{
+  padding: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+}
