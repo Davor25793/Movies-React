@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import {Link} from 'react-router-dom'
+
 
 const Movie = ({data}) => {
 
@@ -14,7 +16,7 @@ const Movie = ({data}) => {
             <h3>{movie.title}</h3>
             <p>{movie.vote_average}</p>
           </div>
-          <a href="#" className="btn">Read More</a>
+          <Link to={`/movie/${movie.id}`} className="btn">Read More</Link>
         </div>
       ))}
      </Fragment>
