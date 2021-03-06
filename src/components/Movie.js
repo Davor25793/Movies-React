@@ -1,25 +1,16 @@
-import { Fragment } from "react";
-import {Link} from 'react-router-dom'
-
-
-const Movie = ({data}) => {
+const Movie = ({poster,title,average}) => {
 
   const IMGPATH = 'https://image.tmdb.org/t/p/w1280'
 
-  console.log(data);
   return ( 
-     <Fragment>
-      {data.results.map(movie => (
-        <div className="movie" key={movie.id}>
-          <img src={IMGPATH + movie.poster_path} alt=""/>
-          <div className="movie-content">
-            <h3>{movie.title}</h3>
-            <p>{movie.vote_average}</p>
-          </div>
-          <Link to={`/movie/${movie.id}`} className="btn">Read More</Link>
-        </div>
-      ))}
-     </Fragment>
+    <div className="movie">
+      <img src={IMGPATH + poster} alt=""/>
+      <div className="movie-content">
+        <h3>{title}</h3>
+        <p>{average}</p>
+      </div>
+      <a href="#" class="btn">Show more</a>
+    </div>
    );
 }
  

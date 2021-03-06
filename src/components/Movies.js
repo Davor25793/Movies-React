@@ -3,22 +3,21 @@ import Movie from './Movie'
 
 const Movies = () => {
 
+  const {data, loading} = useFetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=dd132df044d85760fdd79f3192642f6a')
 
-  const APIURL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=dd132df044d85760fdd79f3192642f6a'
+  const res = data.results;
 
-  const {data, isLoading} = useFetch(APIURL)
+  console.log(res);
 
-  // console.log(data)
-  
-
-  return (  
+  return ( 
     <div className="container">
       <div className="movies-container">
-        {isLoading && <div>Loading...</div>}
-        {data && <Movie data={data} />}
+       {res && res.map(movie => (
+         <Movie key={movie.id} poster={movie.poster_path} title={movie.title} average={movie.vote_average}  />
+       ))}
       </div>
     </div>
-  );
+   );
 }
  
 export default Movies;
