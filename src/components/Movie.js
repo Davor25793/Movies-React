@@ -1,4 +1,7 @@
-const Movie = ({poster,title,average}) => {
+import {Link} from 'react-router-dom'
+
+const Movie = ({poster,title,average, id}) => {
+
 
   const IMGPATH = 'https://image.tmdb.org/t/p/w1280'
 
@@ -9,7 +12,7 @@ const Movie = ({poster,title,average}) => {
         <h3>{title}</h3>
         <p>{average}</p>
       </div>
-      <a href="#" class="btn">Show more</a>
+      <Link to={`/${id}`} class="btn">Show more</Link>
     </div>
    );
 }
