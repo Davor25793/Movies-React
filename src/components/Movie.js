@@ -12,7 +12,7 @@ const Movie = ({poster,title,average, id}) => {
         <h3>{title}</h3>
         <p>{average}</p>
       </div>
-      <Link to={`/${id}`} class="btn">Show more</Link>
+      <Link to={`/movie/${id}`} class="btn">Show more</Link>
     </div>
    );
 }

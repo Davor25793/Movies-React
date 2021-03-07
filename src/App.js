@@ -7,10 +7,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
         <Switch>
-          <Route exact path="/" component={Movies} />
-          <Route path="/:id" component={MovieDetails}/>
+          <Route exact path="/">
+            <Navbar />
+            <Movies />
+          </Route>
+          <Route path="/movie/:id" component={MovieDetails} />
         </Switch>
       </div>
     </BrowserRouter>
