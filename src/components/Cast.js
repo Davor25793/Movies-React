@@ -1,4 +1,3 @@
-import useFetch from './useFetch'
 import {useState, useEffect} from 'react'
 
 const Cast = ({id}) => {
@@ -15,18 +14,7 @@ const Cast = ({id}) => {
       .then(res => {
         setContent(res.cast.slice(0,10))
       })
-  }, [CAST])
-
-  console.log(content)
-
-
-  
-  // const images = () => {
-  //   const fill = content.filter(img => img.profile_path !== null)
-  //   return fill
-  // }
-
-  // images()
+  }, [])
   
 
   return (  
@@ -35,8 +23,8 @@ const Cast = ({id}) => {
       <div className="container">
       <div className="cast-container">
       {content.map(item => (
-        <div className="cast-item">
-          <img src={IMGPATH + item.profile_path} alt=""/> 
+        <div className="cast-item" key={item.cast_id}>
+        <img src={IMGPATH + item.profile_path} alt=""/> 
           <div className="cast-item-content">
           <h4 className="character">{item.character}</h4>
           <h3 className="actor">Actor: {item.original_name}</h3>

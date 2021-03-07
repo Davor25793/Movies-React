@@ -1,7 +1,7 @@
 import {useParams, Link} from 'react-router-dom'
 import useFetch from './useFetch'
 import Cast from './Cast'
-
+import MovieVideo from './MovieVideo'
 
 
 const MovieDetails = () => {
@@ -25,6 +25,7 @@ const MovieDetails = () => {
           <p className="lead">{overview}</p>
         </div>
         <Cast id={id}/>
+        <MovieVideo id={id} />
       <Link to="/">
         <span className="backBtn">
           <i class="fas fa-chevron-left fa-2x"></i>

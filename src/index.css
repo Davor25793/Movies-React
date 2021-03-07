@@ -131,7 +131,7 @@
 }
 
 .cast-item{
-  width: 220px;
+  width: 250px;
   height: 200px;
   margin: 4rem 1.5rem;
 }
@@ -152,10 +152,21 @@
 }
 
 
-
 .actor{
   font-size: 16px;
 }
+
+.video-container{
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.video iframe{
+  width: 80%;
+  min-height: 500px;
+}
+
 
 
 
