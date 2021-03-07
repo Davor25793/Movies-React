@@ -132,8 +132,16 @@
 
 .cast-item{
   width: 250px;
-  height: 200px;
-  margin: 4rem 1.5rem;
+  height: 300px;
+  margin: 3rem 1.5rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.9);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.cast-item:hover{
+  transform: scale(1.1);
 }
 
 .cast-item img{
@@ -160,6 +168,10 @@
   display: flex;
   justify-content: center;
   padding: 2rem;
+}
+
+.video{
+  margin: 2rem 0;
 }
 
 .video iframe{

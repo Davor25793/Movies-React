@@ -1,5 +1,6 @@
 import useFetch from './useFetch'
 import Movie from './Movie'
+import Spinner from './Spinner'
 
 const Movies = () => {
 
@@ -12,7 +13,7 @@ const Movies = () => {
   return ( 
     <div className="container">
       <div className="movies-container">
-        {isLoading && <div>Loading....</div>}
+        {isLoading && <Spinner/>}
         {res && res.map(movie => (
          <Movie key={movie.id} poster={movie.poster_path} title={movie.title} average={movie.vote_average} id={movie.id} />
        ))}
