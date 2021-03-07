@@ -92,9 +92,7 @@
   cursor: pointer;
 }
 
-.single-movie{
-  position: relative;
-}
+
 
 .single-movie img{
   display: block ;
@@ -119,9 +117,8 @@
 
 .lead{
   font-size: 1.3rem;
-  text-align: center;
   width: 80%;
-  display: block;
-  margin: 0 auto;
-  padding: 1rem 0;
+  margin: 20px auto;
+  font-style: italic;
 }
+
