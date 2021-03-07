@@ -18,19 +18,32 @@ const Cast = ({id}) => {
   }, [CAST])
 
   console.log(content)
+
+
+  
+  // const images = () => {
+  //   const fill = content.filter(img => img.profile_path !== null)
+  //   return fill
+  // }
+
+  // images()
   
 
   return (  
     <div className="cast">
       <h2 className="text-center">CAST</h2>
+      <div className="container">
       <div className="cast-container">
-        {content.map(item => (
-          <div className="cast-item">
-            <img src={IMGPATH + item.profile_path} alt=""/>
-            <h3 className="character">{item.character}</h3>
-            <h2>Actor: {item.original_name}</h2>
+      {content.map(item => (
+        <div className="cast-item">
+          <img src={IMGPATH + item.profile_path} alt=""/> 
+          <div className="cast-item-content">
+          <h4 className="character">{item.character}</h4>
+          <h3 className="actor">Actor: {item.original_name}</h3>
           </div>
-        ))}
+        </div>
+      ))}
+    </div>
       </div>
     </div>
   );
