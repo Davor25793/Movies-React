@@ -1,4 +1,3 @@
-
 import Movie from './Movie'
 
 const Movies = ({datas}) => {
