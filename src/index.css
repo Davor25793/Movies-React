@@ -7,22 +7,12 @@
 }
 
 
-.navbar{
- background: rgb(31, 5, 61);
- padding: 1rem;
- margin-bottom: 3rem;
- position: sticky;
- top: 0;
- left: 0;
- z-index: 10;
- cursor: pointer;
-}
 
-.navbar-container{
+/* .navbar-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 
 .logo{
@@ -192,6 +182,21 @@
 .overview{
   padding: 2rem 0 4rem 0;
   background: #ccc;
+}
+
+/*OSTAVI OVAKO ZASADA*/
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(31, 5, 61);
+  padding: 1rem 4rem;
+  margin-bottom: 3rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
 }
 
 
