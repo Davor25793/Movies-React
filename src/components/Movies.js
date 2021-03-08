@@ -10,7 +10,7 @@ const Movies = () => {
   const res = data.results;
 
   // console.log(res);
-
+  
   return ( 
     <div className="container">
       <div className="movies-container">

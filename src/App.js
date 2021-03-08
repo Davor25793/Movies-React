@@ -4,6 +4,9 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import MovieDetails from './components/MovieDetails'
 
 function App() {
+
+  
+
   return (
     <BrowserRouter>
       <div className="App">

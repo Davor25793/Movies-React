@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import Movies from './Movies'
 
 const Form = () => {
 
@@ -9,7 +8,6 @@ const Form = () => {
 
   const input = document.querySelector('#search')
 
-  console.log(search)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -23,8 +21,7 @@ const Form = () => {
       })
   }
 
-  console.log(search)
-
+  
 
   return (  
     <form onSubmit={handleSubmit}>
