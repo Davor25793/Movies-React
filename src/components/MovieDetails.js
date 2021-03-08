@@ -4,6 +4,7 @@ import Cast from './Cast'
 import MovieVideo from './MovieVideo'
 
 
+
 const MovieDetails = () => {
 
   const {id} = useParams()

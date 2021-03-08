@@ -1,14 +1,13 @@
-import Image from '../img/logo.jpg'
+import Image from '../img/logo.svg'
+import Form from './Form'
 
 const Navbar = () => {
   return ( 
-    <nav className="navbar">
+    <nav className="navbar" onClick={() => window.scroll(0,0)}>
       <div className="container">
         <div className="navbar-container">
           <img src={Image} alt="" className="logo"/>
-          <form>
-            <input type="text"  id="search" placeholder="Search movie"/>
-          </form>
+          <Form />
         </div>
       </div>
     </nav>

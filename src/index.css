@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
 }
 
 
@@ -10,6 +11,11 @@
  background: rgb(31, 5, 61);
  padding: 1rem;
  margin-bottom: 3rem;
+ position: sticky;
+ top: 0;
+ left: 0;
+ z-index: 10;
+ cursor: pointer;
 }
 
 .navbar-container{
@@ -18,9 +24,9 @@
   align-items: center;
 }
 
+
 .logo{
-  width: 100px;
-  cursor: pointer;
+  width: 80px;
 }
 
 .container{
@@ -123,6 +129,10 @@
 }
 
 /*CAST*/
+.cast{
+  background: #f4f4f4;
+  padding: 2rem 0 3rem 0;
+}
 
 .cast-container{
   display: flex;
@@ -179,6 +189,9 @@
   min-height: 500px;
 }
 
-
+.overview{
+  padding: 2rem 0 4rem 0;
+  background: #ccc;
+}
 
 
