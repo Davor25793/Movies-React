@@ -10,8 +10,8 @@ const Movie = ({poster,title,average, id}) => {
       <img src={IMGPATH + poster} alt=""/>
       <div className="movie-content">
         <h3>{title}</h3>
-        <p>{average}</p>
       </div>
+      <p className="average">{average}</p>
       <Link to={`/movie/${id}`} class="btn">Show more</Link>
     </div>
    );
