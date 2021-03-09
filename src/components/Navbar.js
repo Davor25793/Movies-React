@@ -1,14 +1,15 @@
 import Image from '../img/logo.svg'
 
 const Navbar = () => {
+
+  const onClick = () => {
+    window.location.reload()
+  }
+
   return ( 
-    <nav className="navbar">
-      <div className="container">
-        <div className="navbar-container">
-            <img src={Image} alt="" className="logo"/>
-        </div>
-      </div>
-    </nav>
+      <nav className="navbar" onClick={onClick}>
+        <img src={Image} alt="" className="logo"/>
+      </nav>
    );
 }
  

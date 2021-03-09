@@ -17,6 +17,7 @@
 
 .logo{
   width: 80px;
+  z-index: 100;
 }
 
 .container{
@@ -206,7 +207,6 @@
   background: #ccc;
 }
 
-/*OSTAVI OVAKO ZASADA*/
 .nav-container{
   display: flex;
   justify-content: space-between;
@@ -220,5 +220,22 @@
   z-index: 10;
   cursor: pointer;
 }
+
+.showMore{
+  display: block;
+  background: rgb(31, 5, 61);
+  margin: 1.5rem auto 2rem auto;
+  border: none;
+  cursor: pointer;
+  padding: .7rem 2rem;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  width: 200px;
+  text-transform: uppercase;
+}
+
+
 
 

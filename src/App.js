@@ -4,6 +4,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import MovieDetails from './components/MovieDetails'
 import {useState, useEffect} from 'react'
 import Spinner from './components/Spinner'
+import Pagination from './components/Pagination'
 
 
 
@@ -84,7 +85,8 @@ function App() {
           </Route>
           <Route path="/movie/:id" component={MovieDetails} />
         </Switch>
-        {show && <button className="showMore" onClick={handleClick}>Show more</button>}
+        {show && <button className="showMore" onClick={handleClick}>Load</button>}
+        <Pagination />
       </div>
     </BrowserRouter>
   );
