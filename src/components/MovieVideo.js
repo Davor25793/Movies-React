@@ -12,11 +12,12 @@ const MovieVideo = ({id}) => {
       .then(data => data.json())
       .then(res => {
         setVideo(res.results[0])
+        console.log(video)
       });
   }, [])
 
-
   const key = video.key
+    
 
   return (  
     <div className="video">

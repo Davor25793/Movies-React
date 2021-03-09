@@ -14,7 +14,6 @@ const MovieDetails = () => {
   const IMGPATH = 'https://image.tmdb.org/t/p/w1280'
 
   const {data} = useFetch(DETAILS)
-  // console.log(data);
   
   const {backdrop_path, overview} = data;
 
