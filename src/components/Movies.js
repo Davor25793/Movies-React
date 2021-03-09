@@ -2,10 +2,12 @@ import Movie from './Movie'
 
 const Movies = ({datas}) => {
 
+  const newData = datas.filter(item => item.poster_path !== null)
+
   return ( 
     <div className="container">
       <div className="movies-container">
-        {datas.map(movie => (
+        {newData.map(movie => (
          <Movie key={movie.id} poster={movie.poster_path} title={movie.title} average={movie.vote_average} id={movie.id} />
        ))}
       </div>

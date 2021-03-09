@@ -6,6 +6,7 @@ import {useState, useEffect} from 'react'
 import Spinner from './components/Spinner'
 
 
+
 function App() {
 
   const [movies, setMovies] = useState([])
@@ -27,18 +28,23 @@ function App() {
   }, [])
 
 
+
   const handleSubmit = (e) => {
-    e.preventDefault()
+      e.preventDefault()
 
-    setLoading(true)
+        if(search === ''){
+          
+        }else{
+          setLoading(true)
 
-    fetch(SEARCHMOVIE + search)
-      .then(data => data.json())
-      .then(res => {
-        setMovies(res.results)
-        setSearch('')
-        setLoading(false)
-      })
+          fetch(SEARCHMOVIE + search)
+          .then(data => data.json())
+          .then(res => {
+            setMovies(res.results)
+            setSearch('')
+            setLoading(false)
+         })
+        } 
   }
 
 
@@ -49,8 +55,8 @@ function App() {
           <Route exact path="/">
             <div className="nav-container" onClick={() => window.scroll(0,0)}>
               <Navbar />
-              <form onSubmit={handleSubmit}>
-                <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" id="search" placeholder="Search movie"/>
+              <form onSubmit={handleSubmit} >
+              <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" id="search" placeholder="Search movie"/>
               </form>
             </div>
             {loading && <Spinner />}
