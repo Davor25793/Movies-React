@@ -45,6 +45,8 @@ function App() {
             setLoading(false)
          })
         } 
+
+        console.log(movies)
   }
 
 

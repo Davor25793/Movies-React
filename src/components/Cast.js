@@ -4,7 +4,8 @@ const Cast = ({id}) => {
 
   const CAST = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=dd132df044d85760fdd79f3192642f6a&language=en-US`
 
-  const IMGPATH = 'https://image.tmdb.org/t/p/w1280'
+  const IMGPATH = 'https://image.tmdb.org/t/p/w500'
+  
 
   const [content, setContent] = useState([])
 
@@ -15,6 +16,9 @@ const Cast = ({id}) => {
         setContent(res.cast.slice(0,10))
       })
   }, [])
+
+  
+  const profileImg = content.filter(item => item.profile_path !== null)
   
 
   return (  
@@ -22,7 +26,7 @@ const Cast = ({id}) => {
       <h2 className="text-center">CAST</h2>
       <div className="container">
       <div className="cast-container">
-      {content.map(item => (
+      {profileImg.map(item => (
         <div className="cast-item" key={item.cast_id}>
         <img src={IMGPATH + item.profile_path} alt=""/> 
           <div className="cast-item-content">

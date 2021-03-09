@@ -2,7 +2,9 @@ import Movie from './Movie'
 
 const Movies = ({datas}) => {
 
-  const newData = datas.filter(item => item.poster_path !== null)
+  const newData = datas.filter(item => item.poster_path !== null && item.backdrop_path !== null)
+
+  console.log(newData);
 
   return ( 
     <div className="container">
