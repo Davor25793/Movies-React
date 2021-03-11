@@ -4,9 +4,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import MovieDetails from './components/MovieDetails'
 import {useState, useEffect} from 'react'
 import Spinner from './components/Spinner'
-import Pagination from './components/Pagination'
-
-
+import Message from './components/Message'
 
 
 function App() {
@@ -17,6 +15,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10)
   const [show, setShow] = useState(false)
+  const [msg, showMsg] = useState(false)
 
 
 
@@ -40,23 +39,29 @@ function App() {
 
   const handleSubmit = (e) => {
       e.preventDefault()
-
         if(search === ''){
-          
+          console.log('Empty field')
         }else{
           setLoading(true)
-
           fetch(SEARCHMOVIE + search)
           .then(data => data.json())
           .then(res => {
-            setMovies(res.results)
-            setSearch('')
-            setLoading(false)
+            if(res.results.length === 0){
+              // console.log('Movie has not been found!!!')
+              showMsg(true)
+              setSearch('')
+              setLoading(false)
+            }else{
+              setMovies(res.results)
+              setSearch('')
+              setLoading(false)
+              showMsg(false)
+            }
          })
         } 
-
-        console.log(movies)
   }
+
+  
 
   //Logic
   const indexOfLastPost = currentPage * postsPerPage 
@@ -76,17 +81,17 @@ function App() {
           <Route exact path="/">
             <div className="nav-container" onClick={() => window.scroll(0,0)}>
               <Navbar />
-              <form onSubmit={handleSubmit} >
+              <form onSubmit={handleSubmit}>
               <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" id="search" placeholder="Search movie"/>
               </form>
             </div>
              {loading && <Spinner />}
+            {msg && <Message />}
            <Movies datas={currentPost}/>
           </Route>
           <Route path="/movie/:id" component={MovieDetails} />
         </Switch>
         {show && <button className="showMore" onClick={handleClick}>Load</button>}
-        <Pagination />
       </div>
     </BrowserRouter>
   );

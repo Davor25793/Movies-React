@@ -6,6 +6,7 @@ const MovieVideo = ({id}) => {
   const VIDEO = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=dd132df044d85760fdd79f3192642f6a&language=en-US`
 
   const [video, setVideo] = useState([])
+  const [hide, setHide] = useState(false)
 
   useEffect(() => {
     fetch(VIDEO)
@@ -17,7 +18,9 @@ const MovieVideo = ({id}) => {
   }, [])
 
   const key = video.key
-    
+  
+
+
 
   return (  
     <div className="video">
