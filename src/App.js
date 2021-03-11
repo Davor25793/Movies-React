@@ -85,7 +85,7 @@ function App() {
               <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" id="search" placeholder="Search movie"/>
               </form>
             </div>
-             {loading && <Spinner />}
+            {loading && <Spinner />}
             {msg && <Message />}
            <Movies datas={currentPost}/>
           </Route>
