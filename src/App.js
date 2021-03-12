@@ -5,6 +5,7 @@ import MovieDetails from './components/MovieDetails'
 import {useState, useEffect} from 'react'
 import Spinner from './components/Spinner'
 import Message from './components/Message'
+import Alert from './components/Alert'
 
 
 function App() {
@@ -12,10 +13,11 @@ function App() {
   const [movies, setMovies] = useState([])
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(false)
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10)
   const [show, setShow] = useState(false)
   const [msg, showMsg] = useState(false)
+  const [alert, setAlert] = useState(false)
 
 
 
@@ -40,7 +42,7 @@ function App() {
   const handleSubmit = (e) => {
       e.preventDefault()
         if(search === ''){
-          console.log('Empty field')
+          setAlert(true)
         }else{
           setLoading(true)
           fetch(SEARCHMOVIE + search)
@@ -51,15 +53,18 @@ function App() {
               showMsg(true)
               setSearch('')
               setLoading(false)
+              setAlert(false)
             }else{
               setMovies(res.results)
               setSearch('')
               setLoading(false)
               showMsg(false)
+              setShow(false)
+              setAlert(false)
             }
          })
-        } 
-  }
+        }
+      }
 
   
 
@@ -86,6 +91,7 @@ function App() {
               </form>
             </div>
             {loading && <Spinner />}
+            {alert && <Alert />}
             {msg && <Message />}
            <Movies datas={currentPost}/>
           </Route>

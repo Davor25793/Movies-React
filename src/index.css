@@ -8,13 +8,6 @@
 
 
 
-/* .navbar-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-
-
 .logo{
   width: 80px;
   z-index: 100;
@@ -65,18 +58,13 @@
 }
 
 .movies-container{
-  /* padding: 3rem 0; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 
-/*TU SE VRATI JER OVO NEĆE VALJATI*/
 .movie-content{
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   padding: .5rem;
 }
 
@@ -96,13 +84,6 @@
   margin: 10px;
 }
 
-/*I OVO POGLEDAJ*/
-/* .movie-content p{
-  background: rgb(36, 11, 11);
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-} */
 
 .movie:hover{
   transform: scale(1.1);
@@ -207,8 +188,6 @@
   border-radius: 10px;
 }
 
-
-
 .overview{
   padding: 2rem 0 4rem 0;
   background: #ccc;
@@ -247,12 +226,62 @@
   padding: 0 0 1.4rem 0;
 }
 
-.message p{
+.message p, .alert{
   text-align: center;
   font-size: 1.4rem;
   font-weight: 800;
 }
 
+@media(max-width: 900px){
+  .video-container{
+    display: block;
+  }
+
+  .video iframe{
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
 
 
+@media(max-width:400px){
+  .nav-container{
+    flex-direction: column;
+  }
+
+  .cast-item{
+    box-shadow: none;
+  }
+
+  #search{
+    margin-top: .8rem;
+  }
+
+  .single-movie img{
+    height: 40vh;
+  }
+
+  .container{
+    width: 100%;
+  }
+
+  .cast-item{
+   margin: 2rem 0;
+  }
+
+  .video iframe{
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+@media(max-width: 320px){
+  .video .container{
+    max-width: 100%;
+  }
+
+  .video iframe{
+    border-radius: 0;
+  }
+}
 

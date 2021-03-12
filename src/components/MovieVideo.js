@@ -12,7 +12,6 @@ const MovieVideo = ({id}) => {
       .then(data => data.json())
       .then(res => {
         setVideo(res.results)
-        console.log(res)
       });
   }, [])
 
